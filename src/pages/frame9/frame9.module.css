@@ -1,0 +1,414 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main_container {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.main_container,
+.main_container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+
+.rectangle {
+  width: 100%;
+  height: 10vh;
+  background: rgba(249, 220, 211, 0.62);
+}
+.tra_cuu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 50vw;  /* Phù hợp với chiều rộng màn hình */
+  height: 6vh;  /* Tự động điều chỉnh theo chiều cao màn hình */
+  top: -1vh;
+  left: 25vw;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 8vh;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 0.1vh #000000;
+}
+.arrow_left_circle {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  top: 1.5vh;
+  left: 2vw;
+}
+.icon {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background: url(../../assets/frame9/01bc60a3-e932-4182-bf84-208f56c4c0e7.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+.flex_row {
+  display: flex;
+  width: 25vw;
+  height: 3vh;
+  margin: 8vh 0 0 15vw;
+}
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 21%;
+  left: 28%;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 4vh;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 3;
+}
+.thoi_tiet_tiet_troi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 144px;
+  height: 30px;
+  top: 21.5%;
+  left: 47%;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 4.5vh;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 3;
+}
+.icon_1 {
+  position: relative;
+  width: 5vh;    /* Thay thế chiều rộng pixel thành phần trăm viewport */
+  height: 4vh;  /* Thay thế chiều cao pixel thành phần trăm viewport */
+  margin: 1.8vw 0 0 -6vw;
+  background: url(../../assets/frame9/1790a517-fb9c-4a05-ac3d-d37cef154c2d.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 8;
+}
+.flex_row_ca {
+  position: relative;
+  width: 10vw;    /* Thay thế chiều rộng pixel thành phần trăm viewport */
+  height: 1.5vh;  /* Thay thế chiều cao pixel thành phần trăm viewport */
+  margin: 0 0 0 20vw; /* Điều chỉnh margin trái cho tỷ lệ màn hình */
+  z-index: 8;
+}
+
+.noun {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  top: 305%;
+  left: -252%;
+  color: rgba(0, 0, 0, 0.66);
+  font-family: Inter, var(--default-font-family);
+  font-size: 2.5vh;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 7;
+}
+.wea_ther {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  color: rgba(0, 0, 0, 0.66);
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vh;
+  top: 325%;
+  left: -235%;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 8;
+}
+.line {
+  position: relative;
+  width: 60%;
+  height: 0.2%;
+  margin: 6.946vh 0 0 5.8vh;
+  background: url(../../assets/frame9/02f5e9c6-6cc8-4045-8f76-07ce0ca3654d.png)
+    no-repeat center;
+  background-size: cover;
+  font-size: 2vh;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 6;
+}
+.weather_description {
+  position: relative;
+  width: 80vw;      /* Sử dụng phần trăm viewport để chiều rộng */
+  height: auto;     /* Để chiều cao tự động điều chỉnh theo nội dung */
+  margin: 1.5vh auto 0; /* Sử dụng vh để khoảng cách từ trên và tự động căn giữa */
+  font-family: Roboto, var(--default-font-family);
+  font-size: 1vh;   /* Kích thước chữ vẫn giữ nguyên */
+  font-weight: 600;
+  top: 0%;
+  left: 2%;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 9;
+}
+
+.quote {
+  position: relative;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1rem; /* Sử dụng rem cho kích thước văn bản */
+  font-weight: 400;
+  line-height: 1.4; /* Đặt line-height theo tỷ lệ */
+  text-align: center;
+}
+
+.weather_2 {
+  position: relative;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+.quote_3 {
+  position: relative;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+.rectangle_4 {
+  position: relative;
+  width: 90%; /* Sử dụng phần trăm cho chiều rộng */
+  max-width: 430px; /* Đặt chiều rộng tối đa */
+  height: 25%; /* Để chiều cao tự động điều chỉnh */
+  margin: 7vh auto; /* Tạo khoảng cách từ trên và căn giữa */
+  padding: 2vh; /* Thêm khoảng cách bên trong nếu cần thiết */
+  background: rgba(232, 230, 186, 0.4);
+  z-index: 12;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng nếu muốn */
+  border-radius: 8px; /* Thêm bo góc nếu muốn */
+}
+
+
+.example {
+  position: relative;
+  width: 15%; /* Đặt chiều rộng theo phần trăm */
+  max-width: 62px; /* Chiều rộng tối đa */
+  height: auto; /* Để chiều cao tự động điều chỉnh */
+  margin: 1vh auto 0; /* Sử dụng vh cho khoảng cách từ trên và căn giữa */
+  font-family: Inter, var(--default-font-family);
+  font-size: 1rem;
+  top: -8%;
+  left: -43%;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 22;
+}
+.example_5 {
+  position: relative;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  z-index: 22;
+}
+.add_circle {
+  position: absolute;
+  width: 2vw; /* Sử dụng vw cho kích thước */
+  height: auto; /* Chiều cao tự động điều chỉnh */
+  top: 19%; /* Sử dụng % cho vị trí */
+  left: 6%; /* Sử dụng % cho vị trí */
+  z-index: 14;
+  overflow: hidden;
+}
+.icon_6 {
+  position: relative;
+  width: 1vw; /* Sử dụng vw cho chiều rộng */
+  height: 0.8vw; /* Sử dụng vw cho chiều cao */
+  margin: 1vh 0 0 0vw; /* Sử dụng vh và vw cho khoảng cách */
+  background: url(../../assets/frame9/45453a5d-9410-4343-a9f9-33614d386222.png)
+    no-repeat center;
+  background-size: contain; /* Điều chỉnh kích thước hình ảnh để vừa khung */
+  z-index: 15;
+}
+
+.weather_clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50vw; /* Sử dụng vw để chiều rộng linh hoạt */
+  height: 5vh; /* Sử dụng vh để chiều cao linh hoạt */
+  top: 4vh; /* Sử dụng vh để đặt vị trí từ trên */
+  left: -9.7vw; /* Sử dụng vw để đặt vị trí từ trái */
+  color: #000000;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 0.8vw; /* Sử dụng vw để kích thước chữ linh hoạt */
+  font-weight: 500;
+  line-height: 5vh; /* Đặt line-height theo vh */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 22;
+}
+
+.add_circle_7 {
+  position: absolute;
+  width: 1.2vw; /* Sử dụng vw cho kích thước */
+  height: auto; /* Chiều cao tự động điều chỉnh */
+  top: 38%; /* Sử dụng % cho vị trí */
+  left: 6.5%; /* Sử dụng % cho vị trí */
+  z-index: 14;
+  overflow: hidden;
+}
+.icon_8 {
+  position: relative;
+  width: 0.91vw; /* Sử dụng vw cho chiều rộng */
+  height: 0.8vw; /* Sử dụng vw cho chiều cao */
+  margin: 0vh 0 0 0vw;
+  background: url(../../assets/frame9/4dae5e61-6a59-443e-a428-89f3adf82f3f.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 17;
+}
+.fair_weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50vw; /* Sử dụng vw để chiều rộng linh hoạt */
+  height: 5vh; /* Sử dụng vh để chiều cao linh hoạt */
+  top: 7.6vh; /* Sử dụng vh để đặt vị trí từ trên */
+  left: -12.4vw; /* Sử dụng vw để đặt vị trí từ trái */
+  color: #000000;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 0.8vw; /* Sử dụng vw để kích thước chữ linh hoạt */
+  font-weight: 500;
+  line-height: 5vh; /* Đặt line-height theo vh */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 22;
+}
+.add_circle_9 {
+  position: absolute;
+  width: 1.2vw; /* Sử dụng vw cho kích thước */
+  height: auto; /* Chiều cao tự động điều chỉnh */
+  top: 52%; /* Sử dụng % cho vị trí */
+  left: 6.5%; /* Sử dụng % cho vị trí */
+  z-index: 14;
+  overflow: hidden;
+}
+.icon_a {
+  position: relative;
+  width: 0.91vw; /* Sử dụng vw cho chiều rộng */
+  height: 0.8vw; /* Sử dụng vw cho chiều cao */
+  margin: 0vh 0 0 0vw;
+  background: url(../../assets/frame9/4dae5e61-6a59-443e-a428-89f3adf82f3f.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 17;
+}
+.good_weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50vw; /* Sử dụng vw để chiều rộng linh hoạt */
+  height: 5vh; /* Sử dụng vh để chiều cao linh hoạt */
+  top: 11.1vh; /* Sử dụng vh để đặt vị trí từ trên */
+  left: -13.2vw; /* Sử dụng vw để đặt vị trí từ trái */
+  color: #000000;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 0.8vw; /* Sử dụng vw để kích thước chữ linh hoạt */
+  font-weight: 500;
+  line-height: 5vh; /* Đặt line-height theo vh */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 22;
+}
+.add_circle_b {
+  position: absolute;
+  width: 1.2vw; /* Sử dụng vw cho kích thước */
+  height: auto; /* Chiều cao tự động điều chỉnh */
+  top: 65.5%; /* Sử dụng % cho vị trí */
+  left: 6.5%; /* Sử dụng % cho vị trí */
+  z-index: 14;
+  overflow: hidden;
+}
+.icon_c {
+  position: relative;
+  width: 0.91vw; /* Sử dụng vw cho chiều rộng */
+  height: 0.8vw; /* Sử dụng vw cho chiều cao */
+  margin: 0vh 0 0 0vw;
+  background: url(../../assets/frame9/4dae5e61-6a59-443e-a428-89f3adf82f3f.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 17;
+}
+.bad_weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50vw; /* Sử dụng vw để chiều rộng linh hoạt */
+  height: 5vh; /* Sử dụng vh để chiều cao linh hoạt */
+  top: 14.5vh; /* Sử dụng vh để đặt vị trí từ trên */
+  left: -9.8vw; /* Sử dụng vw để đặt vị trí từ trái */
+  color: #000000;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 0.8vw; /* Sử dụng vw để kích thước chữ linh hoạt */
+  font-weight: 500;
+  line-height: 5vh; /* Đặt line-height theo vh */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 22;
+}

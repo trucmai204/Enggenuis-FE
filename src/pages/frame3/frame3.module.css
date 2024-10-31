@@ -1,0 +1,157 @@
+css
+Sao chép mã
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main_container {
+  overflow: hidden;
+}
+
+.main_container,
+.main_container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main_container {
+  position: relative;
+  width: 80vw; /* Chiếm 80% chiều rộng màn hình */
+  height: 70vh; /* Chiếm 70% chiều cao màn hình */
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+}
+.generic_avatar {
+  position: relative;
+  width: 8vw; /* Chiếm 15% chiều rộng màn hình */
+  height: 8vw;
+  margin: 10vh auto 0 auto; /* Canh giữa theo chiều ngang và cách đỉnh 10% chiều cao màn hình */
+  background: #e1c3eb;
+  z-index: 7;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.avatar_placeholder {
+  position: relative;
+  width: 6vw;
+  height: 7vw;
+  margin: 2vh auto 0 auto;
+  background: url(../../assets/frame3/34d79fe5-6d34-4cdf-a518-4ec1dc59098c.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 8;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vw;
+  height: 9vh;
+  margin: 3vh auto 0 auto;
+  cursor: pointer;
+  background: #a27be0;
+  border: none;
+  z-index: 4;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.state_layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 3vh 2vw;
+  z-index: 5;
+}
+.login_label_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 1.5vw;
+  margin: 0vh 0 0 0.5vh;
+  font-weight: 600;
+  line-height: 3vh;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 6;
+}
+.rectangle {
+  position: absolute;
+  width: 40vw;
+  height: 8vh;
+  top: 80%;
+  left: 20vw;
+  background: rgba(217, 217, 217, 0.7);
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 4vh;
+}
+
+.gmail {
+  position: absolute;
+  width: 20vw;
+  height: 8vh;
+  top: 67%;
+  left: 14vw;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;
+  font-weight: 600;
+  line-height: 4vh;
+  text-align: center;
+  z-index: 3;
+}
+.gmail_1 {
+  position: relative;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1.5vw;
+  font-weight: 600;
+  line-height: 28.8px;
+  text-align: center;
+  letter-spacing: -0.48px;
+}
+.rectangle_2 {
+  position: absolute;
+  width: 40vw;
+  height: 8vh;
+  top: 65%;
+  left: 20vw;
+  background: rgba(217, 217, 217, 0.7);
+  overflow: hidden;
+  border-radius: 4vh;
+}
+
+.password_input {
+  position: absolute;
+  width: 20vw;
+  height: 8vh;
+  top: 82%;
+  left: 15vw;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1vw;
+  font-weight: 600;
+  line-height: 4vh;
+  text-align: center;
+  z-index: 8;
+}
+
+.password_text {
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1.5vw;
+  font-weight: 600;
+  line-height: 4vh;
+  text-align: center;
+  z-index: 1;
+}

@@ -1,0 +1,230 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+}
+
+.main{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+.main_container {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.rectangle, .rectangle_1 {
+  position: absolute;
+  width: 100vw;
+  height: 60vh; /* Chiều cao có thể điều chỉnh */
+  top: 0;
+  left: 0;
+  background: #f2d6f2;
+}
+
+.flex_row_caf {
+  position: relative;
+  width: 90px;
+  height: 21.333px;
+  margin: 1vh 0 0 1vw; /* Thay đổi đơn vị thành vw, vh */
+}
+.icon {
+  position: absolute;
+  width: 2vw;
+  height: 4vh;
+  top: 0;
+  left: 0;
+  background: url(../../assets/frame1/a7e05b9c-55bf-41dc-8ef9-94f9a1e85c48.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 25;
+}
+.quang_mai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 7vwpx;
+  height: 3vh;
+  top: 1.5vh;
+  left: 2.5vw;
+  color: rgba(0, 0, 0, 0.43);
+  font-family: Roboto, var(--default-font-family);
+  font-size: 1vw;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.1vw;
+  z-index: 26;
+}
+
+.english_learning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #9f7e7e;
+  font-family: Inter, var(--default-font-family);
+  font-size: 8vw; /* Sử dụng vw để font chữ tự điều chỉnh */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -2px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.flex_row_f {
+  position: relative;
+  width: 40vw; /* Thay đổi từ px sang vw */
+  height: 6vh;
+  margin: 10vh 0 0 5vw;
+  z-index: 50;
+}
+
+.edit {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  margin: 12vh 0 0 0vw;
+  top: 25vh;
+  left: 25vw;
+  z-index: 17;
+  overflow: hidden;
+}
+
+.icon_2 {
+  position: relative;
+  width: 2.5vw;
+  height: 4.9vh;
+  margin: 0.5vh 0 0 0.1vw;
+  background: url(../../assets/frame1/914ce91a-d422-4a5d-8105-b0cd98076b1c.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 16;
+}
+
+.book_open {
+  position: absolute;
+  width: 3vw;
+  height: 6vh;
+  margin: 0.5vh 0 0 4.5vw;
+  top: 37vh;
+  left: -0.5vw;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.icon_3 {
+  position: relative;
+  width: 2.5vw;
+  height: 5.3vh;
+  margin: 0.5vh 0 0 0.5vw;
+  background: url(../../assets/frame1/010cd0b2-3d1a-4b42-95e2-95d9b5c8c573.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 25;
+}
+
+.message_square {
+  position: absolute;
+  width: 3vw;
+  height: 5vh;
+  top: 38.5vh;
+  left: 65vw;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.icon_5 {
+  position: relative;
+  width: 2vw;
+  height: 5vh;
+  margin: 0.3vh 0 0 0.2vw;
+  background: url(../../assets/frame1/7cf481f1-5648-4d21-83ce-082d5fdd8f59.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 5;
+}
+
+.clock {
+  position: absolute;
+  width: 3vw;
+  height: 5vh;
+  top: 38vh;
+  left: 83vw;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.icon_6 {
+  position: relative;
+  width: 2.5vw;
+  height: 4.9vh;
+  margin: 0.2vh 0 0 0.3vw;
+  background: url(../../assets/frame1/59a61265-8f26-44e5-bf77-4e261d6512eb.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 16;
+}
+
+.rectangle_7, .rectangle_8, .rectangle_9, .rectangle_a, .rectangle_b, .rectangle_c {
+  position: absolute;
+  width: 12vw;
+  height: 20vh;
+  background-size: cover;
+}
+
+.rectangle_7 { top: 55vh; left: 83.5vw; background: url(../../assets/frame1/97008204-6947-49ac-8625-3abd036968c9.png) no-repeat center; z-index: 25; }
+.rectangle_8 { top: 0; left: 0; background: url(../../assets/frame1/1a281440-71b7-46bb-989f-c9145a4346b4.png) no-repeat center; z-index: 18; }
+.rectangle_9 { top: 55vh; left: 25vw; background: url(../../assets/frame1/dba57b12-29d5-4de0-b4a1-41e359232d50.png) no-repeat center; z-index: 11; }
+.rectangle_a { top: 55vh; left: 65vw; background: url(../../assets/frame1/337a22a5-198c-465c-a4eb-5df766fcfe5b.png) no-repeat center; z-index: 3; }
+.rectangle_b { top: 55vh; left: 45vw; background: url(../../assets/frame1/f6952c04-8f5f-43f1-88fd-230ffb599b90.png) no-repeat center; z-index: 2; }
+.rectangle_c { top: 55vh; left: 5vw; background: url(../../assets/frame1/03539575-b238-451e-83b9-e24d8a01e041.png) no-repeat center; z-index: 2; }
+
+.lich_su, .luyen_viet, .tu_van, .bai_tap, .tu_dien {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.1vw;
+  text-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.25);
+}
+
+.lich_su { top: calc(50% - 2vh); left: calc(53% - 2.5vw); z-index: 12; }
+.luyen_viet { top: calc(50% - 2vh); left: calc(85% - 6.5vw); z-index: 16; }
+.tu_van { top: calc(50% - 2vh); left: calc(96% - 8vw); z-index: 10; }
+.bai_tap { top: calc(50% - 2vh); left: calc(87% - 7vw); z-index: 12; }
+.tu_dien { top: calc(50% - 2vh); left: calc(85% - 7vw); z-index: 7; }
+
+.book {
+  position: absolute;
+  width: 2.8vw;
+  height: 5vh;
+  top: 38vh;
+  left: 45vw;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.icon_4 {
+  position: relative;
+  width: 2.1vw;
+  height: 4.4vh;
+  margin: 0.6vh 0 0 0.3vw;
+  background: url(../../assets/frame1/dd91c725-80da-4af5-94d2-282edc789b4a.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 25;
+}

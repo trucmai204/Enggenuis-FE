@@ -1,0 +1,357 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main_container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;  /* Sử dụng 100% thay vì 100vw để không có thanh cuộn */
+  height: 100vh;  /* Giữ chiều cao toàn bộ viewport */
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.main_container,
+.main_container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.rectangle {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% thay vì 100vw */
+  height: 10vh;  /* Chiều cao theo % của viewport */
+  margin: 0;
+  background: rgba(187, 227, 244, 0.79);
+  z-index: 20;
+}
+
+.lich_su {
+  display: flex;
+  align-items: center;  /* Canh giữa theo chiều dọc */
+  justify-content: center;
+  position: absolute;
+  width: 720px;  /* Đặt chiều rộng cụ thể hoặc sử dụng max-width */
+  max-width: 90%;  /* Đảm bảo không vượt quá 90% chiều rộng */
+  height: 44px;
+  top: 5%;  /* Sử dụng % để đảm bảo vị trí phù hợp với chiều cao */
+  left: 50%;
+  transform: translateX(-50%);  /* Canh giữa theo chiều ngang */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 44px;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.96px;
+  z-index: 22;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000000;
+}
+.icon {
+  position: absolute;
+  width: 2.92%;
+  height: 48.32%;
+  top: 23.46%;
+  left: 2.73%;
+  background: url(../../assets/frame7/931a7b43-97ed-4817-99a9-f41b514f8ed4.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 21;
+}
+.flex_row_aae {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% để phù hợp với màn hình */
+  max-width: 506px; /* Đặt max-width để tránh quá lớn */
+  height: 44px;
+  margin: 88px auto;  /* Giữa theo chiều ngang */
+  z-index: 15;
+}
+.book_open {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% để phù hợp với màn hình */
+  max-width: 506px; /* Đặt max-width để tránh quá lớn */
+  height: 44px;
+  margin: 88px auto;  /* Giữa theo chiều ngang */
+  z-index: 15;
+}
+.icon_1 {
+  position: relative;
+  width: 8%;  /* Đặt chiều rộng theo phần trăm để thích ứng với kích thước màn hình */
+  height: auto;  /* Giữ tỉ lệ của ảnh */
+  top: 210.82%;
+  aspect-ratio: 1; /* Giữ tỉ lệ 1:1 cho hình vuông (nếu cần) */
+  margin: 9% 0 0 4.5%; /* Thay đổi margin sang phần trăm */
+  background: url(../../assets/frame7/e5a01098-f6ca-4ed3-829f-ee91f3e7a53d.png)
+    no-repeat center;
+  background-size: contain; /* Giữ tỉ lệ ảnh */
+  z-index: 9;
+}
+
+.book {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% để phù hợp với màn hình */
+  max-width: 506px; /* Đặt max-width để tránh quá lớn */
+  height: 44px;
+  margin: 88px auto;  /* Giữa theo chiều ngang */
+  z-index: 15;
+}
+.icon_2 {
+  position: relative;
+  width: 7%;  /* Đặt chiều rộng theo phần trăm */
+  height: auto;  /* Giữ tỉ lệ của ảnh */
+  top: -72%;
+  aspect-ratio: 1; /* Giữ tỉ lệ 1:1 cho hình vuông (nếu cần) */
+  margin: 5% 0 0 62.5%; /* Thay đổi margin sang phần trăm để linh hoạt */
+  background: url(../../assets/frame7/2be459e1-9c82-4ccb-8b6f-cf617e374ee3.png)
+    no-repeat center;
+  background-size: contain; /* Giữ tỉ lệ ảnh */
+  z-index: 12;
+}
+
+.icon_3 {
+  position: absolute;
+  width: 7.16%;
+  height: 83.94%;
+  top: 210.82%;
+  left: 34.02%;
+  background: url(../../assets/frame7/0d5ad705-20af-455b-af1b-0e9639568fbf.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+.message_square {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% để phù hợp với màn hình */
+  max-width: 506px; /* Đặt max-width để tránh quá lớn */
+  height: 44px;
+  margin: 88px auto;  /* Giữa theo chiều ngang */
+  z-index: 15;
+}
+.icon_4 {
+  position: relative;
+  width: 6%;  /* Đặt chiều rộng theo phần trăm */
+  height: auto;  /* Giữ tỉ lệ của ảnh */
+  top: -362%;
+  aspect-ratio: 1; /* Giữ tỉ lệ 1:1 cho hình vuông (nếu cần) */
+  margin: 2% 0 0 88%; /* Thay đổi margin sang phần trăm để linh hoạt */
+  background: url(../../assets/frame7/c2f6de18-c7ea-41b6-8d75-1384f4547985.png)
+    no-repeat center;
+  background-size: contain; /* Giữ tỉ lệ ảnh */
+  z-index: 14;
+}
+
+.flex_row {
+  position: relative;
+  width: 100%;  /* Sử dụng 100% để phù hợp với màn hình */
+  max-width: 506px; /* Đặt max-width để tránh quá lớn */
+  height: 44px;
+  margin: 88px auto;  /* Giữa theo chiều ngang */
+  z-index: 15;
+}
+.tu_dien {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 15%;  /* Đặt chiều rộng theo phần trăm để phù hợp với kích thước màn hình */
+  height: auto;  /* Chiều cao tự động để giữ tỉ lệ văn bản */
+  top: 50%; /* Đặt vào giữa màn hình */
+  left: 10%; /* Đặt vào giữa màn hình */
+  transform: translate(-50%, -50%); /* Canh giữa theo cả hai trục */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;  /* Sử dụng vw để kích thước chữ tự động điều chỉnh theo kích thước màn hình */
+  font-weight: 600;
+  line-height: 1;  /* Giữ tỉ lệ cho dòng */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 16;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.luyen_viet {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 15%;  /* Đặt chiều rộng theo phần trăm để phù hợp với kích thước màn hình */
+  height: auto;  /* Chiều cao tự động để giữ tỉ lệ văn bản */
+  top: 50%; /* Đặt vào giữa màn hình */
+  left: 38%; /* Đặt vào giữa màn hình */
+  transform: translate(-50%, -50%); /* Canh giữa theo cả hai trục */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 1.9vw;  /* Sử dụng vw để kích thước chữ tự động điều chỉnh theo kích thước màn hình */
+  font-weight: 600;
+  line-height: 1;  /* Giữ tỉ lệ cho dòng */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 16;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.bai_tap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 15%;  /* Đặt chiều rộng theo phần trăm để phù hợp với kích thước màn hình */
+  height: auto;  /* Chiều cao tự động để giữ tỉ lệ văn bản */
+  top: 50%; /* Đặt vào giữa màn hình */
+  left: 67%; /* Đặt vào giữa màn hình */
+  transform: translate(-50%, -50%); /* Canh giữa theo cả hai trục */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;  /* Sử dụng vw để kích thước chữ tự động điều chỉnh theo kích thước màn hình */
+  font-weight: 600;
+  line-height: 1;  /* Giữ tỉ lệ cho dòng */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 16;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.tu_van {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 15%;  /* Đặt chiều rộng theo phần trăm để phù hợp với kích thước màn hình */
+  height: auto;  /* Chiều cao tự động để giữ tỉ lệ văn bản */
+  top: 50%; /* Đặt vào giữa màn hình */
+  left: 92%; /* Đặt vào giữa màn hình */
+  transform: translate(-50%, -50%); /* Canh giữa theo cả hai trục */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;  /* Sử dụng vw để kích thước chữ tự động điều chỉnh theo kích thước màn hình */
+  font-weight: 600;
+  line-height: 1;  /* Giữ tỉ lệ cho dòng */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.48px;
+  z-index: 16;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.flex_row_ef {
+  position: relative;
+  width: 40vw; /* Thay đổi từ px sang vw */
+  height: 6vh;
+  margin: 10vh 0 0 5vw;
+  z-index: 50;
+}
+.cai_dat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 90%;  /* Đặt chiều rộng theo phần trăm */
+  height: auto;  /* Chiều cao tự động để giữ tỉ lệ văn bản */
+  top: 5vh; /* Đặt ở giữa */
+  left: -73%; /* Đặt ở giữa */
+  transform: translate(-50%, -50%); /* Canh giữa */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2.3vw;  /* Kích thước chữ tự động điều chỉnh theo kích thước màn hình */
+  font-weight: 500;
+  line-height: 1.2;  /* Chiều cao dòng */
+  text-align: center;
+  z-index: 3;
+}
+.rectangle_5 {
+  position: absolute;
+  width: 48.8%;  /* Chiều rộng tương đối */
+  max-width: 300px;  /* Chiều rộng tối đa để tránh quá lớn */
+  height: 10vh;  /* Chiều cao tương đối, 10% chiều cao viewport */
+  top: 70%;
+  left: -100%;
+  cursor: pointer;
+  background: #ebe9e9d0;
+  border: none;
+  z-index: 1;
+  border-radius: 30px;
+}
+.icon_6 {
+  position: relative;
+  width: 2.4vw;  /* Sử dụng vw để điều chỉnh kích thước theo chiều rộng màn hình */
+  height: 3vw;  /* Đảm bảo chiều cao tương ứng với chiều rộng */
+  margin: 2vh 0 0 1.4vw;  /* Khoảng cách từ trên và trái */
+  top: -6%;
+  background: url(../../assets/frame7/4f5d9d41-1ef4-4e32-a103-908764dd4296.png)
+    no-repeat center;
+  background-size: contain;  /* Đảm bảo hình ảnh vừa vặn với kích thước */
+  z-index: 5;
+}
+.flex_row_ef {
+  position: relative;
+  width: 80%;  /* Chiều rộng tương đối, có thể điều chỉnh theo nhu cầu */
+  max-width: 500px;  /* Chiều rộng tối đa để tránh mở rộng quá lớn */
+  height: auto;  /* Chiều cao tự động theo nội dung */
+  margin: 10vh auto;  /* Tạo khoảng cách trên và dưới */
+  z-index: 3;
+}
+.rectangle_7 {
+  position: absolute;
+  width: 16.8%;  /* Chiều rộng tương đối */
+  max-width: 300px;  /* Chiều rộng tối đa để tránh quá lớn */
+  height: 10vh;  /* Chiều cao tương đối, 10% chiều cao viewport */
+  top: 70%;
+  left: 1%;
+  cursor: pointer;
+  background: #ebe9e9d0;
+  border: none;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.log_out {
+  position: relative;
+  width: 5vw;  /* Sử dụng vw để điều chỉnh kích thước theo chiều rộng màn hình */
+  height: 5vw;  /* Đảm bảo chiều cao tương ứng với chiều rộng */
+  margin: 3vh 0 0 2vw;  /* Khoảng cách từ trên và trái */
+  z-index: 6;
+  overflow: hidden;
+}
+
+.icon_8 {
+  position: relative;
+  width: 3vw;  /* Sử dụng vw để điều chỉnh kích thước theo chiều rộng màn hình */
+  height: 2vw;  /* Đảm bảo chiều cao tương ứng với chiều rộng */
+  margin: 1px 0 0 -7px;
+  background: url(../../assets/frame7/9d00c118-d76b-40f8-81bb-6efcd0417cec.png)
+    no-repeat center;
+  background-size: contain;  /* Đảm bảo hình ảnh vừa vặn với kích thước */
+  z-index: 7;
+}
+.dang_xuat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 70%;  /* Chiều rộng tương đối */
+  max-width: 300px;  /* Chiều rộng tối đa để tránh quá lớn */
+  height: 8vh;  /* Chiều cao tương đối, 8% chiều cao viewport */
+  top: 71vh;  /* Vị trí từ trên, 5% chiều cao viewport */
+  left: 11%;  /* Căn giữa theo chiều ngang */
+  transform: translateX(-50%);  /* Đẩy sang trái một nửa chiều rộng để căn giữa chính xác */
+  color: #000000;
+  font-family: Inter, var(--default-font-family);
+  font-size: 2vw;  /* Kích thước chữ tương đối */
+  font-weight: 600;
+  line-height: 1.2;  /* Chiều cao dòng tương đối */
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+

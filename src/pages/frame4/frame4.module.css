@@ -1,0 +1,317 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main_container {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;  /* Full viewport width */
+  height: 100vh;  /* Full viewport height */
+  margin: 0;
+  background: #c2e7c6;
+  display: flex;  /* Use Flexbox for better alignment */
+  flex-direction: column;  /* Column layout */
+  align-items: center;  /* Center items horizontally */
+  justify-content: center;  /* Center items vertically */
+}
+
+.main_container,
+.main_container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+.topic_section {
+  width: 80%;  /* Use percentage for width */
+  height: auto;  /* Set height to auto */
+  margin: 25px 0;  /* Add margin for spacing */
+  font-family: Roboto, var(--default-font-family);
+  font-size: 3vh;  /* Use rem units for font size */
+  font-weight: 400;
+  line-height: 1;  /* Line height based on font size */
+  text-align: center;  /* Center text */
+  z-index: 3;
+}
+
+.topic_section_1 {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 25vh;           /* Khoảng cách từ trên xuống */
+  left: 55vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 3vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+
+.question_section {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 42vh;           /* Khoảng cách từ trên xuống */
+  left: 55vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 3vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+.line {
+  position: absolute;      /* Đặt vị trí tuyệt đối cho đường line */
+  top: 47vh;              /* Khoảng cách từ trên xuống */
+  left: 53vh;             /* Khoảng cách từ trái sang */
+  width: 50%;             /* Chiều rộng cho đường line */
+  height: 0.2%;            /* Chiều cao cố định cho đường line */
+  background: url(../../assets/frame4/0d83ff69-45bf-492a-9529-5d290a7312e3.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.line_9 {
+  position: absolute;      /* Đặt vị trí tuyệt đối cho đường line_9 */
+  top: 30vh;              /* Khoảng cách từ trên xuống cho đường line thứ hai */
+  left: 53vh;             /* Khoảng cách từ trái sang */
+  width: 50%;             /* Chiều rộng cho đường line thứ hai */
+  height: 0.2%;          /* Chiều cao cố định cho đường line thứ hai */
+  background: url(../../assets/frame4/0d83ff69-45bf-492a-9529-5d290a7312e3.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.so_luong_cau_hoi {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 47vh;           /* Khoảng cách từ trên xuống */
+  left: 55vh;          /* Khoảng cách từ trái sang */
+  color: #3f3a3a9f;
+  font-size: 2vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 400;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+.chon_loai_cau_hoi {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 52vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 3vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+
+.most_suitable_word {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 58vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 1.5vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+
+.icon {
+  width: 5px; /* Để chiều rộng nhỏ, nhưng có thể điều chỉnh nếu cần */
+  height: 10px; /* Để chiều cao nhỏ */
+  position: absolute;  
+  top: 59vh;           
+  left: 51vh; 
+  background: url(../../assets/frame4/2638f8c3-fdab-4a6f-8be3-b8f2f50d49c4.png)
+    no-repeat center;
+  background-size: contain; /* Thay đổi để giữ tỉ lệ của icon */
+  z-index: 19;
+  transform: translateY(-50%); /* Dịch chuyển lên một nửa chiều cao của icon để căn giữa */
+}
+
+.grammar {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 63vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 1.5vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+
+.icon_4 {
+  width: 5px; /* Để chiều rộng nhỏ, nhưng có thể điều chỉnh nếu cần */
+  height: 10px; /* Để chiều cao nhỏ */
+  position: absolute;  
+  top: 64vh;           
+  left: 51vh;  /* Đặt ở giữa theo chiều ngang (điều chỉnh 10px để phù hợp với kích thước của icon) */
+  background: url(../../assets/frame4/2638f8c3-fdab-4a6f-8be3-b8f2f50d49c4.png)
+    no-repeat center;
+  background-size: contain; /* Thay đổi để giữ tỉ lệ của icon */
+  z-index: 19;
+  transform: translateY(-50%); /* Dịch chuyển lên một nửa chiều cao của icon để căn giữa */
+}
+.verb_conjugation {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 68vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 1.5vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+.icon_5 {
+  width: 5px; /* Để chiều rộng nhỏ, nhưng có thể điều chỉnh nếu cần */
+  height: 10px; /* Để chiều cao nhỏ */
+  position: absolute;  
+  top: 69vh;           
+  left: 51vh;  /* Đặt ở giữa theo chiều ngang (điều chỉnh 10px để phù hợp với kích thước của icon) */
+  background: url(../../assets/frame4/2638f8c3-fdab-4a6f-8be3-b8f2f50d49c4.png)
+    no-repeat center;
+  background-size: contain; /* Thay đổi để giữ tỉ lệ của icon */
+  z-index: 19;
+  transform: translateY(-50%); /* Dịch chuyển lên một nửa chiều cao của icon để căn giữa */
+}
+.reading_comprehension {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 73vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 1.5vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+.icon_6 {
+  width: 5px; /* Để chiều rộng nhỏ, nhưng có thể điều chỉnh nếu cần */
+  height: 10px; /* Để chiều cao nhỏ */
+  position: absolute;  
+  top: 74vh;           
+  left: 51vh;  /* Đặt ở giữa theo chiều ngang (điều chỉnh 10px để phù hợp với kích thước của icon) */
+  background: url(../../assets/frame4/2638f8c3-fdab-4a6f-8be3-b8f2f50d49c4.png)
+    no-repeat center;
+  background-size: contain; /* Thay đổi để giữ tỉ lệ của icon */
+  z-index: 19;
+  transform: translateY(-50%); /* Dịch chuyển lên một nửa chiều cao của icon để căn giữa */
+}
+.sentence_completion {
+  position: absolute;   /* Đặt vị trí tuyệt đối cho phần tử */
+  top: 78vh;           /* Khoảng cách từ trên xuống */
+  left: 53vh;          /* Khoảng cách từ trái sang */
+  color: #000000;
+  font-size: 1.5vh;      /* Sử dụng đơn vị vh cho kích thước phông */
+  font-weight: 500;
+  z-index: 3;          /* Đặt z-index để hiển thị trên các phần tử khác nếu cần */
+}
+.icon_7 {
+  width: 5px; /* Để chiều rộng nhỏ, nhưng có thể điều chỉnh nếu cần */
+  height: 10px; /* Để chiều cao nhỏ */
+  position: absolute;  
+  top: 79vh;           
+  left: 51vh;  /* Đặt ở giữa theo chiều ngang (điều chỉnh 10px để phù hợp với kích thước của icon) */
+  background: url(../../assets/frame4/2638f8c3-fdab-4a6f-8be3-b8f2f50d49c4.png)
+    no-repeat center;
+  background-size: contain; /* Thay đổi để giữ tỉ lệ của icon */
+  z-index: 19;
+  transform: translateY(-50%); /* Dịch chuyển lên một nửa chiều cao của icon để căn giữa */
+}
+.exercise {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 90%; /* Sử dụng phần trăm cho kích thước */
+  height: auto; /* Chiều cao tự động */
+  top: 5%; /* Căn lề trên */
+  left: 50%; /* Căn giữa */
+  transform: translateX(-50%); /* Dịch chuyển để căn giữa */
+  color: #759a63;
+  font-family: Inter, var(--default-font-family);
+  font-size: 6vw; /* Đơn vị vw */
+  font-weight: 700;
+  line-height: 4vh; /* Đơn vị vh */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.96px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000000;
+}
+.icon_8 {
+  position: absolute;  /* Sử dụng vị trí tuyệt đối để định vị chính xác */
+  width: 2.8vw;         /* Sử dụng vw để chiều rộng linh hoạt theo kích thước màn hình */
+  height: 7vw;        /* Sử dụng vw cho chiều cao để giữ tỉ lệ với chiều rộng */
+  margin: 2px;        /* Đặt margin để tạo khoảng cách */
+  top: 9%;            /* Đặt vị trí từ trên xuống */
+  left: 10%;            /* Đặt vị trí từ bên trái vào */
+  background: url(../../assets/frame4/4ba4da48-ae5b-40cd-b440-bdf696760411.png)
+    no-repeat center;
+  background-size: contain; /* Giữ tỉ lệ hình ảnh */
+  z-index: 33;
+  transform: translate(-50%, -50%); /* Dịch chuyển biểu tượng vào giữa nếu cần */
+}
+
+.suggestion_chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 7vw;               /* Sử dụng vw để chiều rộng linh hoạt */
+  height: 6vh;               /* Sử dụng vh để chiều cao linh hoạt */
+  top: 22%;                  /* Đặt khoảng cách từ trên xuống theo phần trăm */
+  left: 77%;                 /* Đặt khoảng cách từ bên trái theo phần trăm */
+  cursor: pointer;
+  background: #f9fffb;
+  border: 1px solid #cac4d0;
+  z-index: 9;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.state_layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 1vw;                  /* Sử dụng vw cho khoảng cách giữa các phần tử */
+  position: relative;
+  width: 15vw;               /* Sử dụng vw cho chiều rộng */
+  height: 6vh;               /* Sử dụng vh cho chiều cao */
+  padding: 1vh 2vw;         /* Sử dụng vh và vw cho padding */
+  z-index: 10;
+}
+
+.label_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+  width: auto;              /* Để chiều rộng tự động */
+  height: 4vh;              /* Sử dụng vh cho chiều cao */
+  color: #49454f;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 1vw;           /* Sử dụng vw cho kích thước font */
+  font-weight: 500;
+  line-height: 4vh;         /* Đặt line-height tương ứng với chiều cao */
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  z-index: 11;
+}
+
+.ex_traveling {
+  position: absolute;
+  width: auto;              /* Để chiều rộng tự động */
+  height: 2vh;              /* Sử dụng vh cho chiều cao */
+  top: 28%;                 /* Đặt khoảng cách từ trên xuống theo phần trăm */
+  left: 15%;                /* Đặt khoảng cách từ bên trái theo phần trăm */
+  color: #000000;
+  font-family: Roboto, var(--default-font-family);
+  font-size: 1.5vw;         /* Sử dụng vw cho kích thước font */
+  font-weight: 400;
+  line-height: 2vh;         /* Đặt line-height tương ứng với chiều cao */
+  text-align: left;
+  letter-spacing: 0.4px;
+  z-index: 6;
+  overflow: hidden;
+}
+

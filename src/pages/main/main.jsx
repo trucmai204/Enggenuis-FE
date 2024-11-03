@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles1 from './frame1.module.css';
 
 export default function Main() {
@@ -31,25 +32,29 @@ export default function Main() {
             </div>
           </div>
         </div>
-        <div className={styles1.rectangle_7}>
+
+        <Link to="/history" className={styles1.rectangle_7}>
           <div className={styles1.rectangle_8}>
             <span className={styles1.lich_su}>Lịch sử</span>
           </div>
-        </div>
-        <div className={styles1.rectangle_9}>
+        </Link>
+        
+        <Link to="/search" className={styles1.rectangle_9}>
           <span className={styles1.luyen_viet}>Luyện viết</span>
-        </div>
-        <div className={styles1.rectangle_a}>
+        </Link>
+        
+        <Link to="/advisory" className={styles1.rectangle_a}>
           <span className={styles1.tu_van}>Tư vấn</span>
-        </div>
-        <div className={styles1.rectangle_b}>
+        </Link>
+        
+        <Link to="/test" className={styles1.rectangle_b}>
           <span className={styles1.bai_tap}>Bài tập</span>
-        </div>
-        <div className={styles1.rectangle_c}>
+        </Link>
+        
+        <Link to="/dictionary" className={styles1.rectangle_c}>
           <span className={styles1.tu_dien}>Từ điển</span>
-        </div>
+        </Link>
       </div>
     </div>
-      
   );
 }

@@ -1,12 +1,20 @@
+// Main.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles7 from './frame7.module.css';
 
 export default function Main() {
+  const navigate = useNavigate();
+
+  const handleBackToHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className={styles7.main_container}>
       <div className={styles7.rectangle}>
         <span className={styles7.lich_su}>Lịch sử</span>
-        <div className={styles7.icon} />
+        <div onClick={handleBackToHome} className={styles7.icon} />
       </div>
       <div className={styles7.flex_row_aae}>
         <div className={styles7.clock} />

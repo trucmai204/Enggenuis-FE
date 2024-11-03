@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Frame1 from './pages/frame1/frame1';
-import Frame2 from './pages/frame2/frame2';
-import Frame3 from './pages/frame3/frame3';
-import Frame4 from './pages/frame4/frame4';
-import Frame5 from './pages/frame5/frame5';
-import Frame7 from './pages/frame7/frame7';
-import Frame9 from './pages/frame9/frame9';
-import Frame10 from './pages/frame10/frame10';
+import Frame1 from './pages/main/main';
+import Frame2 from './pages/dictionary/dictionary';
+import Frame3 from './pages/login/login';
+import Frame4 from './pages/test/test';
+import Frame5 from './pages/advisory/advisory';
+import Frame7 from './pages/history/history';
+import Frame9 from './pages/writting/writting';
+import Frame10 from './pages/account/account';
 
 // Import các frame khác tương tự
 function App() {

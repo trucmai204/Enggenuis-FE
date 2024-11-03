@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles4 from './frame4.module.css';
 
 export default function Main() {
+  const navigate = useNavigate();
+
+  const handleBackToHome = () => {
+    navigate('/');
+  };
   return (
     <div className={styles4.main_container}>
       <div className={styles4.topic_section}>
@@ -33,10 +39,10 @@ export default function Main() {
       <span className={styles4.sentence_completion}>
         Sentence Completion ( Điền vào chỗ trống )
       </span>
-      <div className={styles4.icon_7} />
+      <div  className={styles4.icon_7} />
       <span className={styles4.exercise}>Bài tập</span>
       <div className={styles4.arrow_left_circle}>
-        <div className={styles4.icon_8} />
+        <div onClick={handleBackToHome} className={styles4.icon_8} />
       </div>
       <button className={styles4.suggestion_chip}>
         <div className={styles4.state_layer}>

@@ -10,7 +10,7 @@ import Frame9 from './pages/Writting';
 import Frame10 from './pages/account/account';
 import RegisterPage from './pages/Register';
 import DoTest from './pages/Assignment.js';
-
+import AccountInfoPage from './pages/AccountInfoPage.js';
 // Component App chính
 function App() {
     const [notification, setNotification] = useState(''); // Trạng thái thông báo
@@ -52,6 +52,7 @@ function App() {
                 <Route path="/search" element={<ProtectedRoute element={<Frame9 />} />} />
                 <Route path="/account" element={<ProtectedRoute element={<Frame10 />} />} />
                 <Route path="/DoTest" element={<ProtectedRoute element={<DoTest />} />} />
+                <Route path="/AccountInfoPage" element={<ProtectedRoute element={<AccountInfoPage />} />} />
             </Routes>
         </>
     );

@@ -35,7 +35,8 @@ export default function Main() {
         // Lưu userId vào localStorage
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('name', data.name);
-        localStorage.setItem('api', data.apiKey)
+        localStorage.setItem('api', data.apiKey);
+        localStorage.setItem('levelId', data.levelId);
 
         navigate('/'); // Điều hướng về trang chủ sau khi đăng nhập thành công
       } else {

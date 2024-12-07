@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles1 from './frame1.module.css';
 
 export default function Main() {
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    // Lấy tên người dùng từ localStorage khi trang được tải
+    const storedUsername = localStorage.getItem('name');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
   return (
     <div className="main">
       <div className={styles1.main_container}>
@@ -10,9 +20,10 @@ export default function Main() {
           <div className={styles1.rectangle_1}>
             <div className={styles1.flex_row_caf}>
               <div className={styles1.icon} />
-              <span className={styles1.quang_mai}>Người dùng</span>
+              {/* Hiển thị tên người dùng */}
+              <span className={styles1.quang_mai}>{username || 'Người dùng'}</span>
             </div>
-            <span className={styles1.english_learning}>English Learning</span>
+            <span className={styles1.english_learning}>EngGenius</span>
             <div className={styles1.flex_row_f}>
               <div className={styles1.edit}>
                 <div className={styles1.icon_2} />

@@ -24,7 +24,7 @@ const RegisterPage = () => {
     };
 
     try {
-      const response = await axios.post('https://localhost:7198/User/Register', userData, {
+      const response = await axios.post('https://localhost:5000/User/Register', userData, {
         headers: {
           'accept': '*/*',
           'Content-Type': 'application/json',

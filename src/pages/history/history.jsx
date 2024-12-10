@@ -17,7 +17,7 @@ export default function Main() {
       const userId = localStorage.getItem('userId');
       console.log('User ID:', userId);
       try {
-        const response = await axios.get(`https://localhost:7198/User/History?userId=${userId}`, {
+        const response = await axios.get(`https://localhost:5000/User/History?userId=${userId}`, {
           headers: { 'accept': 'text/plain', 'Accept-Charset': 'utf-8' },
         });
         setHistory(response.data);

@@ -79,7 +79,7 @@ export default function TestCreator() {
     setState((prev) => ({ ...prev, loading: true }));
     try {
       const response = await fetch(
-        "https://localhost:7198/api/Question/GetListQuestionTypes"
+        "https://localhost:5000/api/Question/GetListQuestionTypes"
       );
       const data = await response.json();
       setState((prev) => ({
@@ -116,7 +116,7 @@ export default function TestCreator() {
     try {
       const userId = localStorage.getItem("userId");
       const response = await fetch(
-        `https://localhost:7198/api/Question/CreateQuestions?userId=${userId}`,
+        `https://localhost:5000/api/Question/CreateQuestions?userId=${userId}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -19,7 +19,7 @@ const AccountInfoPage = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `https://localhost:7198/User/GetUserById`,
+          `https://localhost:5000/User/GetUserById`,
           {
             params: {
               userId: userId,
@@ -44,7 +44,7 @@ const AccountInfoPage = () => {
   const handleSave = async () => {
     try {
       await axios.post(
-        `https://localhost:7198/User/Update?userId=${userId}`,
+        `https://localhost:5000/User/Update?userId=${userId}`,
         {
           name: user.name,
           password: user.password,

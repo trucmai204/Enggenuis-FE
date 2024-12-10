@@ -44,7 +44,7 @@ export default function Main() {
       console.log("User ID:", userId);
 
       const response = await axios.get(
-        `https://localhost:7198/api/Dictionary/Search?userId=${userId}&keyword=${keyword}`,
+        `https://localhost:5000/api/Dictionary/Search?userId=${userId}&keyword=${keyword}`,
         {
           headers: {
             accept: "text/plain",

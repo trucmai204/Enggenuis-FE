@@ -50,7 +50,7 @@ export default function Main() {
       const userId = localStorage.getItem('userId');
       console.log('User ID:', userId);
 
-      const response = await fetch(`https://localhost:7198/api/Writing/Review?userId=${userId}`, {
+      const response = await fetch(`https://localhost:5000/api/Writing/Review?userId=${userId}`, {
         method: 'POST',
         headers: {
           'accept': 'text/plain',

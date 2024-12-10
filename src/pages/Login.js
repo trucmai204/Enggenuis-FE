@@ -17,7 +17,7 @@ export default function Main() {
   
     try {
       const response = await fetch(
-        `https://localhost:7198/User/Login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
+        `https://localhost:5000/User/Login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
         {
           method: 'GET',
           headers: {

@@ -11,19 +11,17 @@ import {
   Fade,
 } from "@mui/material";
 import { Send as SendIcon, Close as CloseIcon } from "@mui/icons-material";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ReactMarkdown from "react-markdown"; // Import react-markdown
+import ReactMarkdown from "react-markdown";
+import { useNavigate } from "react-router-dom";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { use } from "react";
 
 // Custom theme
 const theme = createTheme({
   palette: {
-    primary: {
-      main: "#fb6f92",
-    },
-    background: {
-      default: "#f5e8ef",
-    },
+    primary: { main: "#fb6f92" },
+    background: { default: "#f5e8ef" },
   },
   components: {
     MuiPaper: {
@@ -45,8 +43,6 @@ const theme = createTheme({
     },
   },
 });
-
-// Initialize Google Gemini API
 const apiKey = "AIzaSyCs0HRls_Gw-m3DVGwE61sSHGhAd22FE3w";
 
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -106,17 +102,31 @@ const generationConfig = {
 };
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
   const messagesEndRef = useRef(null);
+  const navigate = useNavigate();
+  const [isPremium, setIsPremium] = useState(false);
 
   // Scroll to the bottom whenever messages change
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    // Lấy thông tin permission từ localStorage
+    const permission = localStorage.getItem("permission");
+    if (permission) {
+      // Chuyển đổi về số để dễ so sánh
+      const permissionNumber = parseInt(permission, 10);
+      setIsPremium(permissionNumber === 2);
+    }
+  }, []);
+  
+  
   const handleSendMessage = async () => {
     if (!input.trim()) return;
 
@@ -167,152 +177,194 @@ const Chatbot = () => {
       handleSendMessage();
     }
   };
+  const isPremiumUser = isPremium;
 
-  return (
-    <ThemeProvider theme={theme}>
-  <Box>
-    <Paper
-      elevation={6}
-      sx={{
-        width: "100%",
-        height: "100vh", // Chiều cao toàn màn hình
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "white",
-      }}
-    >
-      {/* Header */}
-      <Box
-        sx={{
-          position: "sticky", // Cố định header
-          top: 0,
-          zIndex: 10,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          p: 2,
-          paddingBottom: 1,
-          paddingTop: 1,
-          backgroundColor: "primary.main",
-          color: "white",
-          borderTopLeftRadius: 8,
-          borderTopRightRadius: 8,
-        }}
-      >
-        {/* Icon Back */}
-        <IconButton
-          color="inherit"
-          onClick={() => {
-            // Thay đổi thành chức năng chuyển hướng về home
-            window.location.href = "/";
-          }}
-        >
-          <ArrowBackIcon />
-        </IconButton>
-
-        {/* Tiêu đề */}
-        <Typography variant="h6" sx={{ flexGrow: 1, textAlign: "center" }}>
-          EngGenuis Assistant
-        </Typography>
-
-        {/* Icon Close */}
-        <IconButton color="inherit" onClick={() => setIsOpen(false)}>
-          <CloseIcon />
-        </IconButton>
-      </Box>
-
-      {/* Message Area */}
-      <Box
-        sx={{
-          flexGrow: 1,
-          overflowY: "auto", // Kích hoạt cuộn
-          p: 2,
-          backgroundColor: "background.default",
-        }}
-      >
-        {messages.map((msg, index) => (
-          <Fade in={true} timeout={600} key={index}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent:
-                  msg.role === "user" ? "flex-end" : "flex-start",
-                mb: 2,
-              }}
-            >
+  return(
+  <div>
+      {isPremiumUser ? (
+        <div>
+          <ThemeProvider theme={theme}>
+            <Box>
               <Paper
-                elevation={3}
+                elevation={6}
                 sx={{
-                  p: 1.5,
-                  maxWidth: "75%",
-                  fontSize: "1.2rem", // Tăng kích thước chữ
-                  backgroundColor:
-                    msg.role === "user" ? "primary.light" : "grey.200",
-                  color:
-                    msg.role === "user"
-                      ? "primary.contrastText"
-                      : "text.primary",
-                  borderRadius: 2,
+                  width: "100%",
+                  height: "100vh", // Chiều cao toàn màn hình
+                  display: "flex",
+                  flexDirection: "column",
+                  backgroundColor: "white",
                 }}
               >
-                {msg.role === "model" ? (
-                  <ReactMarkdown variant="body2">{msg.content}</ReactMarkdown>
-                ) : (
-                  <Typography variant="body2">{msg.content}</Typography>
-                )}
+                {/* Header */}
+                <Box
+                  sx={{
+                    position: "sticky", // Cố định header
+                    top: 0,
+                    zIndex: 10,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    p: 2,
+                    paddingBottom: 1,
+                    paddingTop: 1,
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    borderTopLeftRadius: 8,
+                    borderTopRightRadius: 8,
+                  }}
+                >
+                  {/* Icon Back */}
+                  <IconButton
+                    color="inherit"
+                    onClick={() => {
+                      // Thay đổi thành chức năng chuyển hướng về home
+                      window.location.href = "/";
+                    }}
+                  >
+                    <ArrowBackIcon />
+                  </IconButton>
+
+                  {/* Tiêu đề */}
+                  <Typography
+                    variant="h6"
+                    sx={{ flexGrow: 1, textAlign: "center" }}
+                  >
+                    EngGenuis Assistant
+                  </Typography>
+
+                  {/* Icon Close */}
+                  <IconButton color="inherit" onClick={() => setIsOpen(false)}>
+                    <CloseIcon />
+                  </IconButton>
+                </Box>
+
+                {/* Message Area */}
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    overflowY: "auto", // Kích hoạt cuộn
+                    p: 2,
+                    backgroundColor: "background.default",
+                  }}
+                >
+                  {messages.map((msg, index) => (
+                    <Fade in={true} timeout={600} key={index}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent:
+                            msg.role === "user" ? "flex-end" : "flex-start",
+                          mb: 2,
+                        }}
+                      >
+                        <Paper
+                          elevation={3}
+                          sx={{
+                            p: 1.5,
+                            maxWidth: "75%",
+                            fontSize: "1.2rem", // Tăng kích thước chữ
+                            backgroundColor:
+                              msg.role === "user"
+                                ? "primary.light"
+                                : "grey.200",
+                            color:
+                              msg.role === "user"
+                                ? "primary.contrastText"
+                                : "text.primary",
+                            borderRadius: 2,
+                          }}
+                        >
+                          {msg.role === "model" ? (
+                            <ReactMarkdown variant="body2">
+                              {msg.content}
+                            </ReactMarkdown>
+                          ) : (
+                            <Typography variant="body2">
+                              {msg.content}
+                            </Typography>
+                          )}
+                        </Paper>
+                      </Box>
+                    </Fade>
+                  ))}
+                  {isLoading && (
+                    <Box sx={{ textAlign: "left" }}>
+                      <Typography variant="body2" color="text.secondary">
+                        Đang nhập...
+                      </Typography>
+                    </Box>
+                  )}
+                  <div ref={messagesEndRef} />
+                </Box>
+
+                {/* Input Area */}
+                <Box
+                  sx={{
+                    position: "sticky", // Cố định thanh nhập tin nhắn
+                    bottom: 0,
+                    zIndex: 10,
+                    p: 2,
+                    borderTop: "1px solid",
+                    borderColor: "divider",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <TextField
+                    fullWidth
+                    multiline
+                    maxRows={2}
+                    variant="standard"
+                    placeholder="Aa . . ."
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    InputProps={{
+                      endAdornment: (
+                        <IconButton
+                          color="primary"
+                          onClick={handleSendMessage}
+                          disabled={!input.trim()}
+                        >
+                          <SendIcon />
+                        </IconButton>
+                      ),
+                    }}
+                  />
+                </Box>
               </Paper>
             </Box>
-          </Fade>
-        ))}
-        {isLoading && (
-          <Box sx={{ textAlign: "left" }}>
-            <Typography variant="body2" color="text.secondary">
-              Đang nhập...
-            </Typography>
-          </Box>
-        )}
-        <div ref={messagesEndRef} />
-      </Box>
-
-      {/* Input Area */}
-      <Box
-        sx={{
-          position: "sticky", // Cố định thanh nhập tin nhắn
-          bottom: 0,
-          zIndex: 10,
-          p: 2,
-          borderTop: "1px solid",
-          borderColor: "divider",
-          backgroundColor: "white",
-        }}
-      >
-        <TextField
-          fullWidth
-          multiline
-          maxRows={2}
-          variant="standard"
-          placeholder="Aa . . ."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-          InputProps={{
-            endAdornment: (
-              <IconButton
-                color="primary"
-                onClick={handleSendMessage}
-                disabled={!input.trim()}
-              >
-                <SendIcon />
-              </IconButton>
-            ),
-          }}
-        />
-      </Box>
-    </Paper>
-  </Box>
-</ThemeProvider>
-
+          </ThemeProvider>
+        </div>
+      ) : (
+        <div style={{ textAlign: "center" }}>
+          <p style={{ color: "red", fontSize: "18px" }}>
+            Bạn cần nâng cấp tài khoản để sử dụng tính năng chatbot.
+          </p>
+          <button
+            onClick={() => navigate("/")}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginTop: "10px",
+              padding: "10px 15px",
+              backgroundColor: "#007bff",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+              fontSize: "16px",
+              textAlign: "center",
+            }}
+          >
+            Quay lại trang chủ
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
+
+
 
 export default Chatbot;

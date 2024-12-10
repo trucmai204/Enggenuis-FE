@@ -36,9 +36,11 @@ export default function Main() {
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('name', data.name);
         localStorage.setItem('api', data.apiKey);
-        localStorage.setItem('levelId', data.levelId);
+        localStorage.setItem('levelId', data.level.id);
+        localStorage.setItem('permission', data.permission.id);
 
         navigate('/'); // Điều hướng về trang chủ sau khi đăng nhập thành công
+        window.location.reload();
       } else {
         const errorMessage = response.status === 400 ? 'Sai email hoặc mật khẩu!' : 'Đăng nhập thất bại. Vui lòng thử lại!';
         setError(errorMessage);

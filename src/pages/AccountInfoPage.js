@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { TextField, Box, Typography, Button, CircularProgress, FormControl, InputLabel, Select, MenuItem, FormHelperText, AppBar, Toolbar, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AccountInfoPage = () => {
   const [user, setUser] = useState(null);
@@ -53,8 +55,10 @@ const AccountInfoPage = () => {
       
       localStorage.setItem("name", user.name); // Cập nhật username
       localStorage.setItem("levelId", user.levelId);   // Cập nhật cấp độ nếu cần
-  
+      
+      toast.success("Đã lưu thông tin thành công");
       setIsEditing(false);
+      
     } catch (err) {
       alert("Failed to update user information.");
     }

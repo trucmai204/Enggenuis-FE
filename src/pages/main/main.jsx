@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Main() {
   const [username, setUsername] = useState("");
+  const [showMenu, setShowMenu] = useState(false); // Trạng thái để hiển thị menu
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,8 +15,20 @@ export default function Main() {
       setUsername(storedUsername);
     }
   }, []);
-  const handleNavigation = () => {
-    navigate("/AccountInfoPage"); // Chuyển đến trang User
+
+  const handleMenuToggle = () => {
+    // Bật/tắt menu khi click vào tên người dùng
+    setShowMenu((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+    window.location.reload();
+  };
+
+  const handleAccountInfo = () => {
+    navigate("/AccountInfoPage"); // Chuyển đến trang thông tin tài khoản
   };
 
   return (
@@ -25,7 +38,7 @@ export default function Main() {
           <div className={styles1.rectangle_1}>
             <div
               className={styles1.flex_row_caf}
-              onClick={handleNavigation}
+              onClick={handleMenuToggle} // Thay đổi để bật menu
               style={{ cursor: "pointer" }}
             >
               <div className={styles1.icon} />
@@ -34,6 +47,23 @@ export default function Main() {
                 {username || "Người dùng"}
               </span>
             </div>
+            {/* Menu xuất hiện khi trạng thái showMenu là true */}
+            {showMenu && (
+              <div className={styles1.menu}>
+                <div
+                  className={styles1.menu_item}
+                  onClick={handleAccountInfo}
+                >
+                  Thông tin tài khoản
+                </div>
+                <div
+                  className={styles1.menu_item}
+                  onClick={handleLogout}
+                >
+                  Đăng xuất
+                </div>
+              </div>
+            )}
             <span className={styles1.english_learning}>EngGenius</span>
             <div className={styles1.flex_row_f}>
               <div className={styles1.edit}>
